@@ -40,7 +40,7 @@ c = a + b
 | ------------- | ------------- |
 | Какое значение будет присвоено переменной `c`?  | В данном скрипте переменной c не будет присвоено значение из-за ошибки TypeError: unsupported operand type(s) for +: 'int' and 'str' |
 | Как получить для переменной `c` значение 12?  | c = str(a) + b ![Снимок](https://user-images.githubusercontent.com/123774335/231801473-63e0fd80-3fea-44c7-8b12-7dec4ffe57c7.PNG) |
-| Как получить для переменной `c` значение 3?  | c = a + int(b)  ![Снимок](https://user-images.githubusercontent.com/123774335/231801934-1f529361-976f-4879-85f2-67022060b3e3.PNG) |
+| Как получить для переменной `c` значение 3?  | c = a + int(b) ![снимок](https://user-images.githubusercontent.com/123774335/231802668-eceb99f7-8338-4841-9acc-8d1edc1be277.jpg)  |
 
 
 
