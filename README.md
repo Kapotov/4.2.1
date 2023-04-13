@@ -101,8 +101,21 @@ for result in result_os.split('\n'):
 
 ### Ваш скрипт:
 
-```python
-???
+```
+#!/usr/bin/env python3
+
+import os
+import sys # импортурем модуль чтобы получить доступ к аргументам
+
+path = sys.argv[1] # берем первый аргумент 
+bash_command = ["cd " + path, "git status"] # передаем его cd
+result_os = os.popen(' && '.join(bash_command)).read()
+#is_change = False
+for result in result_os.split('\n'):
+    if result.find('modified') != -1:
+        prepare_result = result.replace('\tmodified:   ', '')
+        print(prepare_result)
+#        break
 ```
 
 ### Вывод скрипта при запуске во время тестирования:
