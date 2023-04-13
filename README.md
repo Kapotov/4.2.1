@@ -121,7 +121,9 @@ for result in result_os.split('\n'):
 ### Вывод скрипта при запуске во время тестирования:
 
 ```
-???
+./check_git.py ~/Documents/netology/devops/git/devops-netology/devops-netology
+   README.md
+   has_been_moved.txt
 ```
 
 ------
@@ -142,14 +144,38 @@ for result in result_os.split('\n'):
 
 ### Ваш скрипт:
 
-```python
-???
+```
+#!/usr/bin/env python3
+
+import socket
+import time
+
+hosts = {'drive.google.com': None, 'mail.google.com': None, 'google.com': None}
+
+while True:
+  for host in hosts:
+    time.sleep(2)
+    ip = socket.gethostbyname(host)
+    print(host + ' - ' + ip)
+    if ip != hosts[host]:
+      print('[ERROR] ' + host + ' IP mistmatch: ' + str(hosts[host]) + ' ' + ip)
+      hosts[host] = ip
 ```
 
 ### Вывод скрипта при запуске во время тестирования:
 
 ```
-???
+./check_ip.py
+drive.google.com - 64.233.165.194
+[ERROR] drive.google.com IP mistmatch: None 64.233.165.194
+mail.google.com - 74.125.205.18
+[ERROR] mail.google.com IP mistmatch: None 74.125.205.18
+google.com - 173.194.222.101
+[ERROR] google.com IP mistmatch: None 173.194.222.101
+drive.google.com - 64.233.165.194
+mail.google.com - 74.125.205.18
+google.com - 173.194.222.101
+drive.google.com - 64.233.165.194
 ```
 
 ------
